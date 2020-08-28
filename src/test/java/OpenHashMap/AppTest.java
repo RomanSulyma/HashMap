@@ -1,7 +1,8 @@
 package OpenHashMap;
 
-import static org.junit.Assert.assertTrue;
-
+import OpenHashMap.map.AbstractHashMap;
+import OpenHashMap.map.OpenHashMap;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -9,12 +10,50 @@ import org.junit.Test;
  */
 public class AppTest 
 {
+
+    final AbstractHashMap hashMap = new OpenHashMap(10);
+
     /**
-     * Rigorous Test :-)
+     * Test map positive result
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void testMapPositive()
     {
-        assertTrue( true );
+        final int firstKey = 10;
+        final int secondKey = 30;
+        final int thirdKey = 50;
+
+        final int firstValue = 20;
+        final int secondValue = 40;
+        final int thirdValue = 60;
+
+        hashMap.put(firstKey, firstValue);
+        hashMap.put(secondKey, secondValue);
+        hashMap.put(thirdKey, thirdValue);
+
+        Assert.assertEquals(firstValue, hashMap.get(firstKey));
+        Assert.assertEquals(secondValue, hashMap.get(secondKey));
+        Assert.assertEquals(thirdValue, hashMap.get(thirdKey));
+    }
+
+    /**
+     * Test map for negative result
+     */
+    @Test
+    public void testMapNegative()
+    {
+        final int key = 10;
+
+        final int firstValue = 20;
+        final int secondValue = 30;
+        final int thirdValue = 40;
+
+        hashMap.put(key, firstValue);
+        hashMap.put(key, secondValue);
+        hashMap.put(key, thirdValue);
+
+        Assert.assertNotEquals(firstValue, hashMap.get(key));
+        Assert.assertNotEquals(secondValue, hashMap.get(key));
+        Assert.assertEquals(thirdValue, hashMap.get(key));
     }
 }
