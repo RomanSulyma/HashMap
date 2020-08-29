@@ -1,22 +1,26 @@
 package OpenHashMap;
 
 import OpenHashMap.map.AbstractHashMap;
-import OpenHashMap.map.OpenHashMap;
-
+import OpenHashMap.map.HashMap;
 import java.util.Scanner;
 
 class Menu {
 
-  private final AbstractHashMap hashMap = new OpenHashMap(2);
+  private final AbstractHashMap hashMap = new HashMap(16);
   private final Scanner scanner = new Scanner(System.in);
 
   /**
-   * Recursive call menu to work with map interface (get, put) values
+   * Call menu to work with map interface (get, put) values
    */
   void getMenu() {
 
-    System.out.println("1 - Get value");
-    System.out.println("2 - Put value");
+    boolean flag = true;
+
+    while (flag) {
+
+      System.out.println("1 - Get value");
+      System.out.println("2 - Put value");
+      System.out.println("3 - Exit");
 
       final int scannedValue = scanValue();
 
@@ -27,11 +31,15 @@ class Menu {
         case 2:
           putValue();
           break;
+        case 3:
+          scanner.close();
+          flag = false;
+          System.out.println("Good bye ;)");
+          break;
         default:
           break;
       }
-
-    getMenu();
+    }
   }
 
   /**

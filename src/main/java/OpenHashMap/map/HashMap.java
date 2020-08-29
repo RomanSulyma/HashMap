@@ -2,7 +2,7 @@ package OpenHashMap.map;
 
 import java.util.Arrays;
 
-public class OpenHashMap implements AbstractHashMap {
+public class HashMap implements AbstractHashMap {
 
   private static final int MIN_VALUE = Integer.MIN_VALUE; // start value of map
   private static final int HASH_CONST = 15; // const for hashing
@@ -11,7 +11,7 @@ public class OpenHashMap implements AbstractHashMap {
   private final int[] keys; // array with keys
   private final int[] values; // array with value
 
-  public OpenHashMap(final int size) {
+  public HashMap(final int size) {
 
     this.size = size;
     this.keys = new int[size];

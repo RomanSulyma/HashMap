@@ -1,7 +1,7 @@
 package OpenHashMap;
 
 import OpenHashMap.map.AbstractHashMap;
-import OpenHashMap.map.OpenHashMap;
+import OpenHashMap.map.HashMap;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import org.junit.Test;
 public class AppTest 
 {
 
-    final AbstractHashMap hashMap = new OpenHashMap(10);
+    private final AbstractHashMap hashMap = new HashMap(10);
 
     /**
      * Test map positive result
