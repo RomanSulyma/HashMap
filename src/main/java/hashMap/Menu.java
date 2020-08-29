@@ -1,12 +1,12 @@
-package HashMap;
+package hashMap;
 
-import HashMap.map.AbstractHashMap;
-import HashMap.map.HashMap;
+import hashMap.map.AbstractHashMap;
+import hashMap.map.HashMap;
 import java.util.Scanner;
 
 class Menu {
 
-  private final AbstractHashMap hashMap = new HashMap(16);
+  private final AbstractHashMap hashMap = new HashMap(2);
   private final Scanner scanner = new Scanner(System.in);
 
   /**
@@ -20,7 +20,8 @@ class Menu {
 
       System.out.println("1 - Get value");
       System.out.println("2 - Put value");
-      System.out.println("3 - Exit");
+      System.out.println("3 - Get size");
+      System.out.println("4 - Exit");
 
       final int scannedValue = scanValue();
 
@@ -32,9 +33,11 @@ class Menu {
           putValue();
           break;
         case 3:
-          scanner.close();
+          getSize();
+          break;
+        case 4:
+          closeApp();
           flag = false;
-          System.out.println("Good bye ;)");
           break;
         default:
           break;
@@ -66,6 +69,21 @@ class Menu {
     final int result = hashMap.get(key);
 
     System.out.println(result);
+  }
+
+  /**
+   * Get current size of map
+   */
+  private void getSize() {
+    System.out.println("Current size: " + hashMap.getSize());
+  }
+
+  /**
+   * Close application
+   */
+  private void closeApp() {
+    scanner.close();
+    System.out.println("Good bye ;)");
   }
 
   /**

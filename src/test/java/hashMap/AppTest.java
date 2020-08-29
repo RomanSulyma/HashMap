@@ -1,7 +1,7 @@
-package HashMap;
+package hashMap;
 
-import HashMap.map.AbstractHashMap;
-import HashMap.map.HashMap;
+import hashMap.map.AbstractHashMap;
+import hashMap.map.HashMap;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -55,5 +55,26 @@ public class AppTest
         Assert.assertNotEquals(firstValue, hashMap.get(key));
         Assert.assertNotEquals(secondValue, hashMap.get(key));
         Assert.assertEquals(thirdValue, hashMap.get(key));
+    }
+
+    /**
+     * Test map size positive
+     */
+    @Test
+    public void testMapSizePositive()
+    {
+        final int firstKey = 10;
+        final int secondKey = 30;
+
+        final int firstValue = 20;
+        final int secondValue = 40;
+
+        final int expectedSize = 2;
+
+        hashMap.put(firstKey, firstValue);
+        hashMap.put(secondKey, secondValue);
+
+        Assert.assertEquals(expectedSize, hashMap.getSize());
+
     }
 }

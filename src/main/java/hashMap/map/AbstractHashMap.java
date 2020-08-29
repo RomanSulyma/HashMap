@@ -1,4 +1,4 @@
-package HashMap.map;
+package hashMap.map;
 
 /**
  * Abstract interface of map with put, get, and hash methods
@@ -35,6 +35,17 @@ public interface AbstractHashMap {
    * @param hash - map hash from hash method
    * @return - HEAD element of map
    */
-  int index(final int hash);
+  int index(final int hash, final int size);
 
+  /**
+   * Check current map size and expand if array is full enough
+   */
+  void checkSize();
+
+  /**
+   * Get current map size
+   *
+   * @return - map current size
+   */
+  int getSize();
 }
