@@ -1,4 +1,4 @@
-package OpenHashMap;
+package HashMap;
 
 public class App {
 

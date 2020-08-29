@@ -1,4 +1,4 @@
-package OpenHashMap.map;
+package HashMap.map;
 
 /**
  * Abstract interface of map with put, get, and hash methods

@@ -1,7 +1,7 @@
-package OpenHashMap;
+package HashMap;
 
-import OpenHashMap.map.AbstractHashMap;
-import OpenHashMap.map.HashMap;
+import HashMap.map.AbstractHashMap;
+import HashMap.map.HashMap;
 import java.util.Scanner;
 
 class Menu {

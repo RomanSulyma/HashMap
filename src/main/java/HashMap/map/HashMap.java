@@ -1,4 +1,4 @@
-package OpenHashMap.map;
+package HashMap.map;
 
 import java.util.Arrays;
 
